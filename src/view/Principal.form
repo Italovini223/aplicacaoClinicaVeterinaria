@@ -8,6 +8,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu1ActionPerformed"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jmiDono">
               <Properties>
@@ -17,12 +20,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiDonoActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jmiProduto">
+            <MenuItem class="javax.swing.JMenuItem" name="jmiPets">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Produto"/>
+                <Property name="text" type="java.lang.String" value="Pets"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiProdutoActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jmiPetsActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

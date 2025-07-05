@@ -26,7 +26,7 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jmiDono = new javax.swing.JMenuItem();
-        jmiProduto = new javax.swing.JMenuItem();
+        jmiPets = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,6 +42,11 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Cadastro");
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
 
         jmiDono.setText("Donos");
         jmiDono.addActionListener(new java.awt.event.ActionListener() {
@@ -51,13 +56,13 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jmiDono);
 
-        jmiProduto.setText("Produto");
-        jmiProduto.addActionListener(new java.awt.event.ActionListener() {
+        jmiPets.setText("Pets");
+        jmiPets.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiProdutoActionPerformed(evt);
+                jmiPetsActionPerformed(evt);
             }
         });
-        jMenu1.add(jmiProduto);
+        jMenu1.add(jmiPets);
 
         jMenuBar2.add(jMenu1);
 
@@ -85,8 +90,15 @@ public class Principal extends javax.swing.JFrame {
        areaTrabalho.add(dono);
     }//GEN-LAST:event_jmiDonoActionPerformed
 
-    private void jmiProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiProdutoActionPerformed
-    }//GEN-LAST:event_jmiProdutoActionPerformed
+    private void jmiPetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiPetsActionPerformed
+        PetsView pets = new PetsView();
+        pets.setVisible(true);
+        areaTrabalho.add(pets);
+    }//GEN-LAST:event_jmiPetsActionPerformed
+
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,6 +140,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jmiDono;
-    private javax.swing.JMenuItem jmiProduto;
+    private javax.swing.JMenuItem jmiPets;
     // End of variables declaration//GEN-END:variables
 }
