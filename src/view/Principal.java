@@ -25,7 +25,7 @@ public class Principal extends javax.swing.JFrame {
         areaTrabalho = new javax.swing.JDesktopPane();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jmiFornecedor = new javax.swing.JMenuItem();
+        jmiDono = new javax.swing.JMenuItem();
         jmiProduto = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,13 +43,13 @@ public class Principal extends javax.swing.JFrame {
 
         jMenu1.setText("Cadastro");
 
-        jmiFornecedor.setText("Fornecedor");
-        jmiFornecedor.addActionListener(new java.awt.event.ActionListener() {
+        jmiDono.setText("Donos");
+        jmiDono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiFornecedorActionPerformed(evt);
+                jmiDonoActionPerformed(evt);
             }
         });
-        jMenu1.add(jmiFornecedor);
+        jMenu1.add(jmiDono);
 
         jmiProduto.setText("Produto");
         jmiProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -81,16 +81,13 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmiFornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiFornecedorActionPerformed
-        FornecedorView fornecedor = new FornecedorView();
-        fornecedor.setVisible(true);
-        areaTrabalho.add(fornecedor);
-    }//GEN-LAST:event_jmiFornecedorActionPerformed
+    private void jmiDonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiDonoActionPerformed
+       DonosView dono = new DonosView();
+       dono.setVisible(true);
+       areaTrabalho.add(dono);
+    }//GEN-LAST:event_jmiDonoActionPerformed
 
     private void jmiProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiProdutoActionPerformed
-        ProdutoView produto = new ProdutoView();
-        produto.setVisible(true);
-        areaTrabalho.add(produto);
     }//GEN-LAST:event_jmiProdutoActionPerformed
 
     /**
@@ -132,7 +129,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane areaTrabalho;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jmiFornecedor;
+    private javax.swing.JMenuItem jmiDono;
     private javax.swing.JMenuItem jmiProduto;
     // End of variables declaration//GEN-END:variables
 }
