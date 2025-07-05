@@ -137,7 +137,15 @@ public class ProcedimentoView extends javax.swing.JInternalFrame {
             new String [] {
                 "Código", "Nome", "Valor Padrão", "Descrição"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jtProcedimento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jtProcedimentoMouseClicked(evt);
