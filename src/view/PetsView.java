@@ -72,7 +72,7 @@ public class PetsView extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Raça");
 
-        jLabel6.setText("Data de nascimento (DD/MM/AAAA)"); // Ajustado o label
+        jLabel6.setText("Data de nascimento");
 
         jLabel7.setText("Peso (kg)");
 
@@ -138,23 +138,15 @@ public class PetsView extends javax.swing.JInternalFrame {
 
         jtPets.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null}, // 8 colunas
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Codigo", "Nome", "Espécie", "Sexo", "Raça", "Nascimento", "Peso", "Dono" // Ajuste os títulos das colunas para ter 8
+                "Codigo", "nome", "especie", "Sexo", "Raça", "Nascimento", "Peso", "Observações", "Dono"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         jtPets.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jtPetsMouseClicked(evt);
@@ -175,6 +167,9 @@ public class PetsView extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,42 +202,41 @@ public class PetsView extends javax.swing.JInternalFrame {
                                 .addComponent(jcbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jcbDono, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtxDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jbSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(32, 32, 32)
-                                .addComponent(jtxPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jbEditar)
-                                    .addComponent(jtxObservacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jbNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 268, Short.MAX_VALUE)
-                        .addComponent(jbExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jbFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel9)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 24, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel6)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jcbDono, 0, 106, Short.MAX_VALUE)
+                                                .addComponent(jtxDataNascimento))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jbSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(28, 28, 28)))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jbNovo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jtxPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel8)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jtxObservacoes, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(51, 51, 51)
+                                        .addComponent(jbEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(jbFechar, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 167, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,8 +292,7 @@ public class PetsView extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(30, 30, 30))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -564,35 +557,30 @@ public class PetsView extends javax.swing.JInternalFrame {
             jtxIdPet.setText(jtPets.getValueAt(linha, 0).toString());
             jtxNome.setText(jtPets.getValueAt(linha, 1).toString());
             jtxEspecie.setText(jtPets.getValueAt(linha, 2).toString());
-            
-            // Selecionar o sexo no ComboBox
+           
             jcbSexo.setSelectedItem(jtPets.getValueAt(linha, 3).toString());
             
             jtxRaca.setText(jtPets.getValueAt(linha, 4).toString());
             jtxDataNascimento.setText(jtPets.getValueAt(linha, 5).toString());
             jtxPeso.setText(jtPets.getValueAt(linha, 6).toString());
             
-            // Observações - A coluna 7 da tabela é o NOME do Dono. Observações não estão na tabela.
-            // Para manter a lógica da tabela, jtxObservacoes é limpo ou preenchido via pesquisa completa.
-            // Se você quiser que as observações sejam carregadas, precisará de uma coluna para elas na JTable
-            // OU buscar o Pet completo usando PetsController.selecionar(pet) aqui no MouseClicked.
-            
-            // Para manter a consistência da JTable que você definiu, jtxObservacoes ficará vazio
-            // se não tiver uma coluna para ele.
-            jtxObservacoes.setText(""); // Limpa o campo de observações se não for carregado da tabela
 
-            // Para o dono, a coluna 7 da tabela é o NOME do Dono.
-            String nomeDonoTabela = jtPets.getValueAt(linha, 7).toString(); // AQUI ESTÁ O ACESSO AO ÍNDICE 7
+            jtxObservacoes.setText(""); 
+
+            
+            String nomeDonoTabela = jtPets.getValueAt(linha, 8).toString(); 
+            jtxObservacoes.setText(jtPets.getValueAt(linha, 7).toString());
+
             if (listaDonos != null) {
-                // Percorre listaDonos para encontrar o nome e selecionar no ComboBox
+                
                 for (int i = 0; i < listaDonos.size(); i++) {
                     if (listaDonos.get(i).getNome().equals(nomeDonoTabela)) {
-                        jcbDono.setSelectedIndex(i + 1); // +1 por causa do item "Selecione um Dono"
+                        jcbDono.setSelectedIndex(i + 1); 
                         break;
                     }
                 }
             } else {
-                jcbDono.setSelectedIndex(0); // Nenhum dono selecionado, volta para "Selecione um Dono"
+                jcbDono.setSelectedIndex(0); 
             }
             
             jtxIdPet.setEditable(false);
@@ -604,7 +592,6 @@ public class PetsView extends javax.swing.JInternalFrame {
             jtxPeso.setEditable(true);
             jtxObservacoes.setEditable(true); 
             jcbDono.setEnabled(true);
-            
             jbNovo.setEnabled(false);
             jbSalvar.setEnabled(false);
             jbEditar.setEnabled(true);
@@ -709,6 +696,7 @@ public class PetsView extends javax.swing.JInternalFrame {
                     p.getRaca(),
                     p.getDataNascimento(),
                     String.valueOf(p.getPeso()),
+                    p.getObservacoes(),
                     nomeDono // Exibe o nome do Dono (coluna de índice 7)
                 });
             }

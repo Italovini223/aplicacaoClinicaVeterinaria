@@ -60,7 +60,7 @@ public class PetsController {
         
         String sql = "UPDATE pets set dono_id = ?, "
                 + "nome = ?, especie = ?, raca = ?, sexo = ?, data_nascimento = ?, "
-                + "peso_kg = ?, observacoes = ? ";
+                + "peso_kg = ?, observacoes = ? WHERE id = ? ";
         
         try {
             PreparedStatement sentenca = c.conector.prepareStatement(sql);
@@ -73,6 +73,7 @@ public class PetsController {
             sentenca.setDate(6, converterUtilDateParaSqlDate(converterStringParaDate(pet.getDataNascimento())));
             sentenca.setFloat(7, pet.getPeso());
             sentenca.setString(8, pet.getObservacoes());
+            sentenca.setInt(9, pet.getPetId());
             
             if(!sentenca.execute()){
                 retorno = true;
