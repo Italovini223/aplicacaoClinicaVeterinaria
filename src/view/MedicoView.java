@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.MedicoModel;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 /**
  *
  * @author User
@@ -375,7 +378,7 @@ public class MedicoView extends javax.swing.JInternalFrame {
                 jtxNome.setText(medico.getNome());
                 jtxCrmv.setText(String.valueOf(medico.getCrmv()));
                 jtxTelefone.setText(medico.getTelefone());
-                jtxDataNascimento.setText(medico.getDataNascimento());
+                jtxDataNascimento.setText(converterDataParaFormatoUsuario(medico.getDataNascimento()));
                 jtxEmail.setText(medico.getEmail());
                 jcbSituacao.setSelectedItem(medico.getSituacao());
                 
@@ -402,7 +405,8 @@ public class MedicoView extends javax.swing.JInternalFrame {
         String nome = jtxNome.getText();
         String crmvStr = jtxCrmv.getText();
         String telefone = jtxTelefone.getText();
-        String dataNascimento = jtxDataNascimento.getText();
+        String dataNascimento = converterDataParaFormatoBanco(jtxDataNascimento.getText());
+        if (dataNascimento == null) return; // cancela a operação se a data for inválida
         String email = jtxEmail.getText();
         if((crmvStr.isEmpty())||(telefone.isEmpty())||(dataNascimento.isEmpty()) || (email.isEmpty()) || (nome.isEmpty()))
             JOptionPane.showMessageDialog(this, "Digite todos os campos!"
@@ -455,7 +459,8 @@ public class MedicoView extends javax.swing.JInternalFrame {
         String email = jtxEmail.getText();
         String telefone = jtxTelefone.getText();
         int crmv = Integer.parseInt(jtxCrmv.getText());
-        String dataNascimento = jtxDataNascimento.getText();
+        String dataNascimento = converterDataParaFormatoBanco(jtxDataNascimento.getText());
+        if (dataNascimento == null) return; // cancela a operação se a data for inválida
         if((nome.isEmpty())||(email.isEmpty())||(telefone.isEmpty()) || (dataNascimento.isEmpty()))
             JOptionPane.showMessageDialog(this, "Digite todos os campos!"
                     , "Retorno Tela", JOptionPane.ERROR_MESSAGE);
@@ -561,7 +566,28 @@ public class MedicoView extends javax.swing.JInternalFrame {
         jcbSituacao.setSelectedIndex(-1); 
     }
 
+    private String converterDataParaFormatoBanco(String dataUsuario) {
+        try {
+            DateTimeFormatter formatoUsuario = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            DateTimeFormatter formatoBanco = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate data = LocalDate.parse(dataUsuario, formatoUsuario);
+            return data.format(formatoBanco);
+        } catch (DateTimeParseException e) {
+            JOptionPane.showMessageDialog(this, "Data inválida! Use o formato dd/MM/yyyy", "Erro", JOptionPane.ERROR_MESSAGE);
+            return null;
+        }
+    }
     
+    private String converterDataParaFormatoUsuario(String dataBanco) {
+        try {
+            DateTimeFormatter formatoBanco = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            DateTimeFormatter formatoUsuario = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate data = LocalDate.parse(dataBanco, formatoBanco);
+            return data.format(formatoUsuario);
+        } catch (DateTimeParseException e) {
+            return dataBanco; // fallback se der erro
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
