@@ -27,6 +27,8 @@ public class Principal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jmiDono = new javax.swing.JMenuItem();
         jmiPets = new javax.swing.JMenuItem();
+        jmiMedicos = new javax.swing.JMenuItem();
+        jmiProcedimentos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,6 +66,22 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jmiPets);
 
+        jmiMedicos.setText("Medicos");
+        jmiMedicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiMedicosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmiMedicos);
+
+        jmiProcedimentos.setText("Procedimentos");
+        jmiProcedimentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiProcedimentosActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmiProcedimentos);
+
         jMenuBar2.add(jMenu1);
 
         setJMenuBar(jMenuBar2);
@@ -100,6 +118,18 @@ public class Principal extends javax.swing.JFrame {
       
         
     }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jmiProcedimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiProcedimentosActionPerformed
+        ProcedimentoView procedimentos = new ProcedimentoView();
+        procedimentos.setVisible(true);
+        areaTrabalho.add(procedimentos);
+    }//GEN-LAST:event_jmiProcedimentosActionPerformed
+
+    private void jmiMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiMedicosActionPerformed
+       MedicoView medicos = new MedicoView();
+       medicos.setVisible(true);
+       areaTrabalho.add(medicos);
+    }//GEN-LAST:event_jmiMedicosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +171,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jmiDono;
+    private javax.swing.JMenuItem jmiMedicos;
     private javax.swing.JMenuItem jmiPets;
+    private javax.swing.JMenuItem jmiProcedimentos;
     // End of variables declaration//GEN-END:variables
 }
