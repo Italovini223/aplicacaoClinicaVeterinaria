@@ -54,7 +54,7 @@ public class DonosController {
         c.conectar();
         
         String sql = "UPDATE donos set nome = ?, "
-                + " cpf = ?, email = ?, telefone = ?, data_nascimento = ? ";
+                + " cpf = ?, email = ?, telefone = ?, data_nascimento = ?WHERE id = ?";
         
         try{
            PreparedStatement sentenca =  c.conector.prepareStatement(sql);
@@ -64,6 +64,7 @@ public class DonosController {
            sentenca.setString(3, dono.getEmail());
            sentenca.setString(4, dono.getNumero());
            sentenca.setDate(5, converterUtilDateParaSqlDate(converterStringParaDate(dono.getDataNascimento())));
+           sentenca.setInt(6, dono.getDonoId());
            
            if(!sentenca.execute()){
                retorno = true;
