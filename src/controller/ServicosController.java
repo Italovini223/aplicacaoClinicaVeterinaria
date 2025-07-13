@@ -5,12 +5,12 @@
 package controller;
 
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import model.ServicosModel;
 import util.Conexao;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.ResultSet;
 
 /**
  *
@@ -144,6 +144,33 @@ public class ServicosController {
        c.desconectar();
        return retorno;
     }
+
+    public ArrayList<ServicosModel> selecionarServicosPorAtendimentoId(int idAtendimento) {
+        ArrayList<ServicosModel> retorno = new ArrayList<>();
+        Conexao c = new Conexao();
+        c.conectar();
+        String sql = "SELECT id, atendimento_id, procedimento_id, valor_cobrado FROM servicos WHERE atendimento_id = ?";
+        try {
+            PreparedStatement sentenca = c.conector.prepareStatement(sql);
+            sentenca.setInt(1, idAtendimento);
+            ResultSet result = sentenca.executeQuery();
+
+            while (result.next()) {
+                ServicosModel s = new ServicosModel();
+                s.setId(result.getInt("id"));
+                s.setId_atendimento(result.getInt("atendimento_id"));
+                s.setId_procedimento(result.getInt("procedimento_id"));
+                s.setValor_cobrado(result.getFloat("valor_cobrado"));
+                retorno.add(s);
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao selecionar serviços por atendimento: " + e.getMessage());
+        } finally {
+            c.desconectar();
+        }
+        return retorno;
+    }
+
 }
 
 
