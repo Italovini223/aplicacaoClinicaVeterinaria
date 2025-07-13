@@ -29,6 +29,11 @@ public class Principal extends javax.swing.JFrame {
         jmiPets = new javax.swing.JMenuItem();
         jmiMedicos = new javax.swing.JMenuItem();
         jmiProcedimentos = new javax.swing.JMenuItem();
+        jmiAtendimento = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jmiRegistrar = new javax.swing.JMenuItem();
+        jmiEditarAtendimento = new javax.swing.JMenuItem();
+        jmiListarTodosAtendimentos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -36,11 +41,11 @@ public class Principal extends javax.swing.JFrame {
         areaTrabalho.setLayout(areaTrabalhoLayout);
         areaTrabalhoLayout.setHorizontalGroup(
             areaTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 981, Short.MAX_VALUE)
+            .addGap(0, 1000, Short.MAX_VALUE)
         );
         areaTrabalhoLayout.setVerticalGroup(
             areaTrabalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 518, Short.MAX_VALUE)
+            .addGap(0, 692, Short.MAX_VALUE)
         );
 
         jMenu1.setText("Cadastro");
@@ -82,7 +87,43 @@ public class Principal extends javax.swing.JFrame {
         });
         jMenu1.add(jmiProcedimentos);
 
+        jmiAtendimento.setText("Atendimento");
+        jmiAtendimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiAtendimentoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmiAtendimento);
+
         jMenuBar2.add(jMenu1);
+
+        jMenu2.setText("Atendimentos");
+
+        jmiRegistrar.setText("Registrar");
+        jmiRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiRegistrarActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmiRegistrar);
+
+        jmiEditarAtendimento.setText("Editar / Excluir");
+        jmiEditarAtendimento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiEditarAtendimentoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmiEditarAtendimento);
+
+        jmiListarTodosAtendimentos.setText("Listar Todos");
+        jmiListarTodosAtendimentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmiListarTodosAtendimentosActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jmiListarTodosAtendimentos);
+
+        jMenuBar2.add(jMenu2);
 
         setJMenuBar(jMenuBar2);
 
@@ -95,8 +136,8 @@ public class Principal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(areaTrabalho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(areaTrabalho)
+                .addContainerGap())
         );
 
         pack();
@@ -130,6 +171,30 @@ public class Principal extends javax.swing.JFrame {
        medicos.setVisible(true);
        areaTrabalho.add(medicos);
     }//GEN-LAST:event_jmiMedicosActionPerformed
+
+    private void jmiAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAtendimentoActionPerformed
+        NovoAtendimentoView novoAtendimento = new NovoAtendimentoView();
+        novoAtendimento.setVisible(true);
+        areaTrabalho.add(novoAtendimento);
+    }//GEN-LAST:event_jmiAtendimentoActionPerformed
+
+    private void jmiRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRegistrarActionPerformed
+        NovoAtendimentoView novoAtendimento = new NovoAtendimentoView();
+        novoAtendimento.setVisible(true);
+        areaTrabalho.add(novoAtendimento);
+    }//GEN-LAST:event_jmiRegistrarActionPerformed
+
+    private void jmiEditarAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiEditarAtendimentoActionPerformed
+       EditarAtendimentoView editarAtendimento = new EditarAtendimentoView();
+       editarAtendimento.setVisible(true);
+       areaTrabalho.add(editarAtendimento);
+    }//GEN-LAST:event_jmiEditarAtendimentoActionPerformed
+
+    private void jmiListarTodosAtendimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiListarTodosAtendimentosActionPerformed
+       ListarTodosAtendimentosView listarTodosAtendimentos = new ListarTodosAtendimentosView();
+       listarTodosAtendimentos.setVisible(true);
+       areaTrabalho.add(listarTodosAtendimentos);
+    }//GEN-LAST:event_jmiListarTodosAtendimentosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,10 +234,15 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane areaTrabalho;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jmiAtendimento;
     private javax.swing.JMenuItem jmiDono;
+    private javax.swing.JMenuItem jmiEditarAtendimento;
+    private javax.swing.JMenuItem jmiListarTodosAtendimentos;
     private javax.swing.JMenuItem jmiMedicos;
     private javax.swing.JMenuItem jmiPets;
     private javax.swing.JMenuItem jmiProcedimentos;
+    private javax.swing.JMenuItem jmiRegistrar;
     // End of variables declaration//GEN-END:variables
 }
