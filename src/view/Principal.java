@@ -1,8 +1,13 @@
 package view;
 
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.JOptionPane;
+import util.Relatorios;
+
 /**
  *
- * @author Cris
+ * @author Yan
  */
 public class Principal extends javax.swing.JFrame {
 
@@ -34,6 +39,11 @@ public class Principal extends javax.swing.JFrame {
         jmiRegistrar = new javax.swing.JMenuItem();
         jmiEditarAtendimento = new javax.swing.JMenuItem();
         jmiListarTodosAtendimentos = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        relatorioMedicos = new javax.swing.JMenuItem();
+        relatorioDonos = new javax.swing.JMenuItem();
+        relatorioPets = new javax.swing.JMenuItem();
+        relatorioProcedimentos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +135,42 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu2);
 
+        jMenu3.setText("Relatórios");
+
+        relatorioMedicos.setText("Relatórios de Médicos");
+        relatorioMedicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                relatorioMedicosActionPerformed(evt);
+            }
+        });
+        jMenu3.add(relatorioMedicos);
+
+        relatorioDonos.setText("Relatórios de Donos");
+        relatorioDonos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                relatorioDonosActionPerformed(evt);
+            }
+        });
+        jMenu3.add(relatorioDonos);
+
+        relatorioPets.setText("Relatórios de Pets");
+        relatorioPets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                relatorioPetsActionPerformed(evt);
+            }
+        });
+        jMenu3.add(relatorioPets);
+
+        relatorioProcedimentos.setText("Relatórios de Procedimentos");
+        relatorioProcedimentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                relatorioProcedimentosActionPerformed(evt);
+            }
+        });
+        jMenu3.add(relatorioProcedimentos);
+
+        jMenuBar2.add(jMenu3);
+
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,6 +242,62 @@ public class Principal extends javax.swing.JFrame {
        areaTrabalho.add(listarTodosAtendimentos);
     }//GEN-LAST:event_jmiListarTodosAtendimentosActionPerformed
 
+    private void relatorioMedicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioMedicosActionPerformed
+        try {
+            Map<String,Object> params = new HashMap<>();
+            Relatorios.gerarRelatorio("relatorioMedicos", params);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Erro ao gerar relatório de Médicos:\n" + ex.getMessage(),
+                "Erro",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }//GEN-LAST:event_relatorioMedicosActionPerformed
+
+    private void relatorioDonosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioDonosActionPerformed
+        try {
+            Map<String,Object> params = new HashMap<>();
+            Relatorios.gerarRelatorio("relatorioDonos", params);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Erro ao gerar relatório de Donos:\n" + ex.getMessage(),
+                "Erro",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }//GEN-LAST:event_relatorioDonosActionPerformed
+
+    private void relatorioPetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioPetsActionPerformed
+        try {
+            Map<String,Object> params = new HashMap<>();
+            Relatorios.gerarRelatorio("relatorioPets", params);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Erro ao gerar relatório de Pets:\n" + ex.getMessage(),
+                "Erro",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }//GEN-LAST:event_relatorioPetsActionPerformed
+
+    private void relatorioProcedimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relatorioProcedimentosActionPerformed
+        try {
+            Map<String,Object> params = new HashMap<>();
+            Relatorios.gerarRelatorio("relatorioProcedimentos", params);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(
+                this,
+                "Erro ao gerar relatório de Procedimentos:\n" + ex.getMessage(),
+                "Erro",
+                JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }//GEN-LAST:event_relatorioProcedimentosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -235,6 +337,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JDesktopPane areaTrabalho;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JMenuItem jmiAtendimento;
     private javax.swing.JMenuItem jmiDono;
@@ -244,5 +347,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jmiPets;
     private javax.swing.JMenuItem jmiProcedimentos;
     private javax.swing.JMenuItem jmiRegistrar;
+    private javax.swing.JMenuItem relatorioDonos;
+    private javax.swing.JMenuItem relatorioMedicos;
+    private javax.swing.JMenuItem relatorioPets;
+    private javax.swing.JMenuItem relatorioProcedimentos;
     // End of variables declaration//GEN-END:variables
 }

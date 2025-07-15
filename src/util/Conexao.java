@@ -16,7 +16,10 @@ public class Conexao {
     private static final String USER = "admin";
     private static final String PASSWORD = "admin123";
 
-    private static final String URL = "jdbc:postgresql://" + HOST + ":" + PORT + "/" + DATABASE_NAME + "?sslmode=disable";
+    private static final String URL = String.format(
+        "jdbc:postgresql://%s:%s/%s?sslmode=disable",
+        HOST, PORT, DATABASE_NAME
+    );
 
     public void conectar(){
         try{
@@ -25,9 +28,9 @@ public class Conexao {
             conector = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Aplicação conectada com Banco PostgreSQL!");
         }catch(ClassNotFoundException e){
-            System.out.println("Driver não encontrado! Verifique se o JAR do PostgreSQL JDBC está nas bibliotecas do projeto. " + e.getMessage());
+            System.err.println("Driver não encontrado! Verifique se o JAR do PostgreSQL JDBC está nas bibliotecas do projeto. " + e.getMessage());
         }catch(SQLException e){
-            System.out.println("Erro na conexão com banco PostgreSQL! " + e.getMessage());
+            System.err.println("Erro na conexão com banco PostgreSQL! " + e.getMessage());
         }
     }
 
@@ -38,7 +41,7 @@ public class Conexao {
                 System.out.println("Conexão com Banco PostgreSQL encerrada!");
             }
         }catch(SQLException e){
-            System.out.println("Erro ao fechar conexão! " + e.getMessage());
+            System.err.println("Erro ao fechar conexão! " + e.getMessage());
         }
     }
 }
