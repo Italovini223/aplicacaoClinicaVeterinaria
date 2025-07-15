@@ -66,19 +66,19 @@ ORDER BY nome]]></query>
 	</columnHeader>
 	<detail>
 		<band height="71" splitType="Stretch">
-			<element kind="textField" uuid="3d6dbb36-b73b-4da2-a84f-6730d3d218ee" x="0" y="0" width="138" height="15" style="Detail">
+			<element kind="textField" uuid="3d6dbb36-b73b-4da2-a84f-6730d3d218ee" stretchType="ContainerHeight" x="0" y="0" width="138" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{id}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="130480bc-9cc6-4b09-8526-4e823a20e0f5"/>
 			</element>
-			<element kind="textField" uuid="a6249cc5-5ad7-47ba-a4c7-05d6e461114d" x="138" y="0" width="138" height="15" style="Detail">
+			<element kind="textField" uuid="a6249cc5-5ad7-47ba-a4c7-05d6e461114d" stretchType="ContainerHeight" x="138" y="0" width="138" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{nome}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d5f577b3-4079-46de-a99c-4dd32810df89"/>
 			</element>
-			<element kind="textField" uuid="deaaa24b-ce76-4ba3-803f-ef801c54aff5" x="276" y="0" width="138" height="50" style="Detail">
+			<element kind="textField" uuid="deaaa24b-ce76-4ba3-803f-ef801c54aff5" stretchType="ContainerHeight" x="276" y="0" width="138" height="50" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{descricao}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1b74317-c1d1-4bf2-bb02-c3b36854dc4e"/>
 			</element>
-			<element kind="textField" uuid="91b37e92-6c0f-45f4-96ad-467fdc1f5c50" x="414" y="0" width="138" height="15" style="Detail">
+			<element kind="textField" uuid="91b37e92-6c0f-45f4-96ad-467fdc1f5c50" stretchType="ContainerHeight" x="414" y="0" width="138" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{valor_padrao}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1ef2bbae-ab8c-494e-aaf0-f2ae1d538990"/>
 			</element>

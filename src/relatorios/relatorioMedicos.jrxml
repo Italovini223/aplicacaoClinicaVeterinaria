@@ -97,31 +97,31 @@ FROM medicos]]></query>
 			<element kind="line" uuid="e333df44-9887-45d8-a569-1c4607976a27" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1">
 				<pen lineWidth="0.5" lineColor="#999999"/>
 			</element>
-			<element kind="textField" uuid="f45e2879-c7f2-4aa5-bfdc-d042853c63c0" x="0" y="0" width="79" height="15" style="Detail">
+			<element kind="textField" uuid="f45e2879-c7f2-4aa5-bfdc-d042853c63c0" stretchType="ContainerHeight" x="0" y="0" width="79" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{id}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fea16b32-8753-48fc-a915-279c13695fc1"/>
 			</element>
-			<element kind="textField" uuid="8c395482-0ee0-47f1-9367-ef1ba7d97ef4" x="79" y="0" width="79" height="15" style="Detail">
+			<element kind="textField" uuid="8c395482-0ee0-47f1-9367-ef1ba7d97ef4" stretchType="ContainerHeight" x="79" y="0" width="79" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{nome}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="96d4f29d-b6fd-4528-b8ca-a11ba3c644b8"/>
 			</element>
-			<element kind="textField" uuid="300de340-aaae-43a9-9e26-6083cdd2ba35" x="158" y="0" width="79" height="15" style="Detail">
+			<element kind="textField" uuid="300de340-aaae-43a9-9e26-6083cdd2ba35" stretchType="ContainerHeight" x="158" y="0" width="79" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{crmv}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d5e98af4-91e5-464e-aa90-6ab12f060443"/>
 			</element>
-			<element kind="textField" uuid="ae2f985a-3095-4386-8a20-6662e8b190ec" x="237" y="0" width="79" height="15" style="Detail">
+			<element kind="textField" uuid="ae2f985a-3095-4386-8a20-6662e8b190ec" stretchType="ContainerHeight" x="237" y="0" width="79" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{email}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1c7b92bf-85a9-4ae1-9570-bb84ff58dff7"/>
 			</element>
-			<element kind="textField" uuid="bebe3e16-8717-4dbf-bc90-18ac9c7da666" x="316" y="0" width="79" height="15" style="Detail">
+			<element kind="textField" uuid="bebe3e16-8717-4dbf-bc90-18ac9c7da666" stretchType="ContainerHeight" x="316" y="0" width="79" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{telefone}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f644d395-085d-4332-8a6f-ea4913f68a44"/>
 			</element>
-			<element kind="textField" uuid="cd5ee1a4-8441-4aa8-b4ee-4ced7ae37e99" x="395" y="0" width="79" height="15" style="Detail">
+			<element kind="textField" uuid="cd5ee1a4-8441-4aa8-b4ee-4ced7ae37e99" stretchType="ContainerHeight" x="395" y="0" width="79" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{data_nascimento}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2c4f2af9-9015-4044-9a76-4012a535f211"/>
 			</element>
-			<element kind="textField" uuid="2e1318bd-88bf-442d-aa43-fbca9ee67445" x="474" y="0" width="79" height="15" style="Detail">
+			<element kind="textField" uuid="2e1318bd-88bf-442d-aa43-fbca9ee67445" stretchType="ContainerHeight" x="474" y="0" width="79" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{ativo}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="235f71b6-ee8f-49d3-bbf6-e9c87681f3a4"/>
 			</element>

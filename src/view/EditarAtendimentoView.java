@@ -119,7 +119,7 @@ public class EditarAtendimentoView extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Medico");
 
-        jLabel6.setText("serviços");
+        jLabel6.setText("Serviços");
 
         jLabel7.setText("Diagnostico");
 
@@ -776,7 +776,7 @@ public class EditarAtendimentoView extends javax.swing.JInternalFrame {
     private javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbFechar;
     private javax.swing.JToggleButton jbNovoServico;
-    public javax.swing.JButton jbPesquisar;
+    private javax.swing.JButton jbPesquisar;
     private javax.swing.JToggleButton jbRemoverServico;
     private javax.swing.JComboBox<String> jcbMedicos;
     private javax.swing.JComboBox<String> jcbPet;
@@ -785,7 +785,7 @@ public class EditarAtendimentoView extends javax.swing.JInternalFrame {
     private javax.swing.JTable jtAtendimentosServicos;
     private javax.swing.JTextArea jtaDiagnostico;
     private javax.swing.JTextArea jtaMotivo;
-    public javax.swing.JTextField jtxCodigo;
+    private javax.swing.JTextField jtxCodigo;
     // End of variables declaration//GEN-END:variables
     // Variáveis adicionadas manualmente para corresponder ao VendaModel/Atendimento
     // Estas precisam ser declaradas e possivelmente inicializadas no construtor
