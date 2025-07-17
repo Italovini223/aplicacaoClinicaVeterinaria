@@ -34,7 +34,6 @@ public class Principal extends javax.swing.JFrame {
         jmiPets = new javax.swing.JMenuItem();
         jmiMedicos = new javax.swing.JMenuItem();
         jmiProcedimentos = new javax.swing.JMenuItem();
-        jmiAtendimento = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jmiRegistrar = new javax.swing.JMenuItem();
         jmiEditarAtendimento = new javax.swing.JMenuItem();
@@ -96,14 +95,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
         jMenu1.add(jmiProcedimentos);
-
-        jmiAtendimento.setText("Atendimento");
-        jmiAtendimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmiAtendimentoActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jmiAtendimento);
 
         jMenuBar2.add(jMenu1);
 
@@ -217,12 +208,6 @@ public class Principal extends javax.swing.JFrame {
        medicos.setVisible(true);
        areaTrabalho.add(medicos);
     }//GEN-LAST:event_jmiMedicosActionPerformed
-
-    private void jmiAtendimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiAtendimentoActionPerformed
-        NovoAtendimentoView novoAtendimento = new NovoAtendimentoView();
-        novoAtendimento.setVisible(true);
-        areaTrabalho.add(novoAtendimento);
-    }//GEN-LAST:event_jmiAtendimentoActionPerformed
 
     private void jmiRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmiRegistrarActionPerformed
         NovoAtendimentoView novoAtendimento = new NovoAtendimentoView();
@@ -339,7 +324,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jmiAtendimento;
     private javax.swing.JMenuItem jmiDono;
     private javax.swing.JMenuItem jmiEditarAtendimento;
     private javax.swing.JMenuItem jmiListarTodosAtendimentos;
