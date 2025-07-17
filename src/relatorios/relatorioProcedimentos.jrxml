@@ -41,6 +41,9 @@ ORDER BY nome]]></query>
 		<element kind="staticText" uuid="6d5abaeb-82b6-411a-9495-a8d25520e1b8" x="0" y="46" width="310" height="22" style="SubTitle">
 			<text><![CDATA[Todos os procedimentos cadastrados]]></text>
 		</element>
+		<element kind="image" uuid="7055fbcb-a205-4795-ad98-dd7c0732d9dd" x="408" y="4" width="145" height="62">
+			<expression><![CDATA["src/imagens/logo.png"]]></expression>
+		</element>
 	</title>
 	<pageHeader splitType="Stretch"/>
 	<columnHeader height="36" splitType="Stretch">
@@ -48,19 +51,19 @@ ORDER BY nome]]></query>
 			<pen lineWidth="0.5" lineColor="#999999"/>
 		</element>
 		<element kind="staticText" uuid="df5e3e24-4db1-4471-9b28-4dc58a55ba42" x="0" y="19" width="138" height="15" style="Column header">
-			<text><![CDATA[id]]></text>
+			<text><![CDATA[Id]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="130480bc-9cc6-4b09-8526-4e823a20e0f5"/>
 		</element>
 		<element kind="staticText" uuid="443d8cd2-5927-4b1a-a422-bad3cfeb36a2" x="138" y="19" width="138" height="15" style="Column header">
-			<text><![CDATA[nome]]></text>
+			<text><![CDATA[Nome]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d5f577b3-4079-46de-a99c-4dd32810df89"/>
 		</element>
 		<element kind="staticText" uuid="ab03b57b-5f64-4cb4-87ba-1e08f7d1dee5" x="276" y="19" width="138" height="15" style="Column header">
-			<text><![CDATA[descricao]]></text>
+			<text><![CDATA[Descrição]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1b74317-c1d1-4bf2-bb02-c3b36854dc4e"/>
 		</element>
 		<element kind="staticText" uuid="843c32fb-9a6e-4128-ad4a-99b40774f1cd" x="414" y="19" width="138" height="15" style="Column header">
-			<text><![CDATA[valor_padrao]]></text>
+			<text><![CDATA[Valor Padrão]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1ef2bbae-ab8c-494e-aaf0-f2ae1d538990"/>
 		</element>
 	</columnHeader>
@@ -74,7 +77,7 @@ ORDER BY nome]]></query>
 				<expression><![CDATA[$F{nome}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d5f577b3-4079-46de-a99c-4dd32810df89"/>
 			</element>
-			<element kind="textField" uuid="deaaa24b-ce76-4ba3-803f-ef801c54aff5" stretchType="ContainerHeight" x="276" y="0" width="138" height="50" textAdjust="StretchHeight" style="Detail">
+			<element kind="textField" uuid="deaaa24b-ce76-4ba3-803f-ef801c54aff5" stretchType="ContainerHeight" x="276" y="0" width="138" height="15" textAdjust="StretchHeight" style="Detail">
 				<expression><![CDATA[$F{descricao}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d1b74317-c1d1-4bf2-bb02-c3b36854dc4e"/>
 			</element>
@@ -82,7 +85,7 @@ ORDER BY nome]]></query>
 				<expression><![CDATA[$F{valor_padrao}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1ef2bbae-ab8c-494e-aaf0-f2ae1d538990"/>
 			</element>
-			<element kind="line" uuid="c095c6dd-805c-4697-a7a6-2e36273bd446" positionType="FixRelativeToBottom" x="10" y="50" width="555" height="1">
+			<element kind="line" uuid="c095c6dd-805c-4697-a7a6-2e36273bd446" positionType="FixRelativeToBottom" x="-2" y="25" width="555" height="1">
 				<pen lineWidth="0.5" lineColor="#999999"/>
 			</element>
 		</band>

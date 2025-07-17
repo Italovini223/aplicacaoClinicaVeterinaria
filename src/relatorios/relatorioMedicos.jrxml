@@ -57,6 +57,9 @@ FROM medicos]]></query>
 		<element kind="staticText" uuid="c089ef81-84c2-4243-a7e9-0e0a8992e71a" x="0" y="46" width="263" height="22" hTextAlign="Left" style="SubTitle">
 			<text><![CDATA[Todos os médicos cadastrados]]></text>
 		</element>
+		<element kind="image" uuid="caa4c71d-acb8-4e7e-adc4-f3703848319b" x="408" y="6" width="145" height="62">
+			<expression><![CDATA["src/imagens/logo.png"]]></expression>
+		</element>
 	</title>
 	<pageHeader splitType="Stretch"/>
 	<columnHeader height="36" splitType="Stretch">

@@ -47,12 +47,15 @@ FROM donos]]></query>
 		<property name="com.jaspersoft.studio.field.tree.path" value="donos"/>
 	</field>
 	<background splitType="Stretch"/>
-	<title height="70" splitType="Stretch">
+	<title height="75" splitType="Stretch">
 		<element kind="staticText" uuid="6f9c1004-6140-4588-9c4f-d75824835765" x="0" y="13" width="263" height="33" vTextAlign="Middle" style="Title">
 			<text><![CDATA[Relatório Donos]]></text>
 		</element>
 		<element kind="staticText" uuid="8e16dabd-2e54-471b-9652-83e1d55379ec" x="0" y="46" width="274" height="22" style="SubTitle">
 			<text><![CDATA[Todos os donos cadastrados]]></text>
+		</element>
+		<element kind="image" uuid="d114aee1-d277-4bdb-a2ce-0ee4a87664c2" x="408" y="10" width="145" height="62">
+			<expression><![CDATA["src/imagens/logo.png"]]></expression>
 		</element>
 	</title>
 	<pageHeader splitType="Stretch"/>
